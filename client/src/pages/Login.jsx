@@ -9,9 +9,18 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("/api/auth/login", form, { withCredentials: true });
-    localStorage.setItem("isAuth", "true");
-    navigate("/products");
+    try {
+      await axios.post(
+        "https://e54-final-assignment-ecomm-site-with-b5rr.onrender.com/api/auth/login",
+        form,
+        { withCredentials: true }
+      );
+      localStorage.setItem("isAuth", "true");
+      navigate("/products");
+    } catch (err) {
+      console.error("Login error:", err.response?.data || err.message);
+      
+    }
   };
 
   return (
