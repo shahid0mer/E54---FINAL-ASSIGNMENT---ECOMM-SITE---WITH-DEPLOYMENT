@@ -12,7 +12,10 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: ["https://your-frontend-url.onrender.com", "http://localhost:5173"],
+    origin: [
+      "https://e54-final-assignment-ecomm-site-with-3gk7.onrender.com",
+      "http://localhost:5173",
+    ],
     credentials: true,
   })
 );
